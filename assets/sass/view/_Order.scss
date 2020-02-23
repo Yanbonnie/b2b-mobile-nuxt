@@ -1,0 +1,521 @@
+.order-page {
+  padding-bottom: 5rem;
+}
+.order-list {
+  background-color: #fff;
+}
+.order-list .orderItem {
+  padding: 1.6rem;
+  border-bottom: 0.1rem solid #e3e3e7;
+}
+.order-list .orderItem:last-child {
+  border-bottom: 0;
+}
+.order-list .orderItem .godetails .title {
+  line-height: 2rem;
+  font-family: PingFangSC-Medium;
+  font-size: 1.5rem;
+  color: #181c28;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.order-list .orderItem .godetails .title span {
+  position: relative;
+  top: -0.2rem;
+  margin-right: 0.8rem;
+  display: inline-block;
+  line-height: 1.9rem;
+  padding: 0 1.05rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-image: linear-gradient(-135deg, #ffb329 0%, #ffc628 100%);
+  border-radius: 0.4rem;
+}
+.order-list .orderItem .godetails .title .much {
+  background-image: linear-gradient(-135deg, #3aa8ff 0%, #52baff 100%);
+}
+.order-list .orderItem .godetails .amount {
+  margin-top: 0.8rem;
+}
+.order-list .orderItem .godetails .amount span {
+  display: inline-block;
+  height: 2.4rem;
+  padding: 0rem 0.8rem;
+  background: #fafafa;
+  border-radius: 0.4rem;
+  margin-right: 1.2rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #7f8593;
+  text-align: justify;
+  line-height: 2.4rem;
+}
+.order-list .orderItem .godetails .passenger {
+  line-height: 1.2rem;
+  margin-top: 1.3rem;
+}
+.order-list .orderItem .godetails .passenger span {
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #7f8593;
+}
+.order-list .orderItem .godetails .passenger span:first-child {
+  margin-right: 2.8rem;
+}
+.order-list .orderItem .godetails .date {
+  margin-top: 1.2rem;
+}
+.order-list .orderItem .godetails .date .orderId {
+  border-right: 0.1rem solid #e3e3e7;
+}
+.order-list .orderItem .godetails .date .orderDate {
+  text-align: center;
+}
+.order-list .orderItem .godetails .date span {
+  display: inline-block;
+  width: 50%;
+  height: 1.2rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #7f8593;
+  text-align: justify;
+  line-height: 1.2rem;
+}
+.order-list .orderItem .godetails .price ul {
+  height: 3rem;
+  margin-top: 1.6rem;
+}
+.order-list .orderItem .godetails .price li {
+  float: left;
+  padding: 0 1.2rem;
+  border-right: 0.1rem solid #e3e3e7;
+}
+.order-list .orderItem .godetails .price li .price {
+  font-family: PingFangSC-Regular;
+  font-size: 1.1rem;
+  color: #b2b4be;
+  line-height: 1.1rem;
+  text-align: left;
+  padding-left: 0.2rem;
+}
+.order-list .orderItem .godetails .price li > div {
+  padding-top: 0.2rem;
+  font-family: PingFangSC-Medium;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+.order-list .orderItem .godetails .price li .price1,
+.order-list .orderItem .godetails .price li .price2 {
+  color: #181c28;
+}
+.order-list .orderItem .godetails .price li .price3 {
+  color: #ff284d;
+}
+.order-list .orderItem .godetails .price li:nth-child(1) {
+  padding-left: 0;
+}
+.order-list .orderItem .godetails .price .noboder {
+  border: none;
+}
+.order-list .orderItem .orderItemButtom {
+  margin-top: 1.2rem;
+  width: 100%;
+  height: 2.8rem;
+}
+.order-list .orderItem .orderItemButtom .showimg {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-top: 0.2rem;
+}
+.order-list .orderItem .orderItemButtom .showimg img {
+  width: 100%;
+  height: 100%;
+}
+.order-list .orderItem .orderItemButtom .addres {
+  width: 9.8rem;
+  height: 100%;
+  float: left;
+  margin-left: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #181c28;
+  text-align: justify;
+  line-height: 2.4rem;
+  padding-top: 0.2rem;
+}
+.order-list .orderItem .orderItemButtom .button > li {
+  float: right;
+  height: 2.8rem;
+  padding: 0 1.7rem;
+  line-height: 2.8rem;
+  text-align: center;
+  border: 0.1rem solid #e3e3e7;
+  margin-left: 0.8rem;
+  border-radius: 1.4rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.3rem;
+  color: #181c28;
+}
+.order-list .orderItem .orderItemButtom .button .paid,
+.order-list .orderItem .orderItemButtom .button .download,
+.order-list .orderItem .orderItemButtom .button .refund.much {
+  background-image: linear-gradient(-90deg, #ff5b5e 0%, #ff284d 100%);
+  color: #fff;
+  border: none;
+}
+.order-list .new-order-item {
+  border-bottom: 1rem solid #fafafa;
+}
+.order-list .new-order-item .go-details .order-id {
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem;
+  height: 4.4rem;
+  line-height: 4.4rem;
+  font-family: PingFangSC-Regular;
+  text-align: justify;
+  border-bottom: 0.1rem solid #eee;
+}
+.order-list .new-order-item .go-details .order-id i {
+  margin-right: 0.6rem;
+}
+.order-list .new-order-item .go-details .order-id span {
+  vertical-align: middle;
+  font-size: 1.2rem;
+  color: #7f8593;
+}
+.order-list .new-order-item .go-details .order-id .order span {
+  display: block;
+  line-height: 1.5rem;
+}
+.order-list .new-order-item .go-details .title {
+  width: 34rem;
+  font-family: PingFangSC-Medium;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #181c28;
+  line-height: 1.9rem;
+  margin: 1.1rem auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  text-overflow: ellipsis;
+}
+.order-list .new-order-item .go-details .date {
+  display: flex;
+  padding: 0 1.6rem;
+  font-size: 1.2rem;
+  font-family: PingFangSC-Regular;
+  line-height: 1.2rem;
+  justify-content: space-between;
+  color: #7f8593;
+}
+.order-list .new-order-item .go-details .date .start-date {
+  font-size: 1.2rem;
+  border-right: 0.1rem solid #e3e3e3;
+  padding-right: 0.6rem;
+}
+.order-list .new-order-item .go-details .date .start-date.border-none {
+  border: 0;
+}
+.order-list .new-order-item .go-details .date .order-date {
+  margin: 0 2rem 0 0.6rem;
+}
+.order-list .new-order-item .go-details .count {
+  padding: 0 1.6rem 1.2rem;
+  border-bottom: 0.1rem solid #eee;
+  margin-top: 1.2rem;
+}
+.order-list .new-order-item .go-details .count ul {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+.order-list .new-order-item .go-details .count li {
+  padding: 0 1.2rem;
+  border-right: 0.1rem solid #e3e3e7;
+}
+.order-list .new-order-item .go-details .count li .price {
+  font-family: PingFangSC-Regular;
+  font-size: 1.1rem;
+  color: #b2b4be;
+  line-height: 1.1rem;
+  height: 1.6rem;
+  text-align: left;
+  padding-left: 0.2rem;
+}
+.order-list .new-order-item .go-details .count li > .price1,
+.order-list .new-order-item .go-details .count li .price2,
+.order-list .new-order-item .go-details .count li .price3 {
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+.order-list .new-order-item .go-details .count li .price1,
+.order-list .new-order-item .go-details .count li .price2 {
+  color: #181c28;
+}
+.order-list .new-order-item .go-details .count li .price3 {
+  color: #ff284d;
+}
+.order-list .new-order-item .go-details .count li:nth-child(1) {
+  padding-left: 0;
+}
+.order-list .new-order-item .go-details .count .no-border {
+  border: none;
+}
+.order-list .new-order-item .order-item-buttom {
+  margin: 1.3rem;
+  overflow: hidden;
+}
+.order-list .new-order-item .order-item-buttom .user-img {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-top: 0.2rem;
+}
+.order-list .new-order-item .order-item-buttom .user-img img {
+  width: 100%;
+  height: 100%;
+}
+.order-list .new-order-item .order-item-buttom .user-name {
+  width: 9.8rem;
+  height: 100%;
+  float: left;
+  margin-left: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #181c28;
+  text-align: justify;
+  line-height: 2.4rem;
+  padding-top: 0.2rem;
+}
+.order-list .new-order-item .order-item-buttom .button {
+  display: flex;
+  overflow: hidden;
+  float: right;
+}
+.order-list .new-order-item .order-item-buttom .button li {
+  display: inline-block;
+  height: 2.8rem;
+  padding: 0 1.7rem;
+  line-height: 2.8rem;
+  text-align: center;
+  border: 0.1rem solid #e3e3e7;
+  margin-left: 0.8rem;
+  border-radius: 1.4rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.3rem;
+  color: #181c28;
+}
+.order-list .new-order-item .order-item-buttom .button .paid,
+.order-list .new-order-item .order-item-buttom .button .download,
+.order-list .new-order-item .order-item-buttom .button .refund.much {
+  background-image: linear-gradient(-90deg, #ff5b5e 0%, #ff284d 100%);
+  color: #fff;
+  border: none;
+}
+.order-list .air-order-item {
+  border-bottom: 1rem solid #fafafa;
+}
+.order-list .air-order-item .go-details .order-id {
+  padding: 0 1.6rem;
+  margin-bottom: 1.25rem;
+  height: 6.15rem;
+  font-family: PingFangSC-Regular;
+  text-align: justify;
+  border-bottom: 0.1rem solid #eee;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.order-list .air-order-item .go-details .order-id .icon-order-air {
+  margin-right: 0.6rem;
+}
+.order-list .air-order-item .go-details .order-id .date {
+  flex: 1;
+  font-size: 1.2rem;
+  color: #7f8593;
+}
+.order-list .air-order-item .go-details .order-id .date span {
+  float: left;
+}
+.order-list .air-order-item .go-details .order-id .amount {
+  font-size: 1.4rem;
+  font-family: PingFangSC-Semibold;
+  color: #181c28;
+  font-weight: bold;
+}
+.order-list .air-order-item .go-details .location-list {
+  padding: 0 1.6rem;
+}
+.order-list .air-order-item .go-details .location-list .item {
+  margin-bottom: 1rem;
+}
+.order-list .air-order-item .go-details .location-list .item .top {
+  font-family: PingFangSC-Regular;
+  font-size: 1.5rem;
+  color: #0c0000;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+.order-list .air-order-item .go-details .location-list .item .top .one-way {
+  color: #7f8593;
+}
+.order-list .air-order-item .go-details .location-list .item .top .place {
+  font-weight: bold;
+}
+.order-list .air-order-item .go-details .location-list .item .bottom {
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #7f8593;
+  text-align: justify;
+  line-height: 1.2rem;
+}
+.order-list .air-order-item .go-details .count {
+  padding: 0 1.6rem 1.2rem;
+  border-bottom: 0.1rem solid #eee;
+}
+.order-list .air-order-item .go-details .count ul {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+}
+.order-list .air-order-item .go-details .count li {
+  padding: 0 1.2rem;
+  border-right: 0.1rem solid #e3e3e7;
+}
+.order-list .air-order-item .go-details .count li .price {
+  font-family: PingFangSC-Regular;
+  font-size: 1.1rem;
+  color: #b2b4be;
+  line-height: 1.1rem;
+  height: 1.6rem;
+  text-align: left;
+  padding-left: 0.2rem;
+}
+.order-list .air-order-item .go-details .count li > .price1,
+.order-list .air-order-item .go-details .count li .price2,
+.order-list .air-order-item .go-details .count li .price3 {
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  text-align: left;
+}
+.order-list .air-order-item .go-details .count li .price1,
+.order-list .air-order-item .go-details .count li .price2 {
+  color: #181c28;
+}
+.order-list .air-order-item .go-details .count li .price3 {
+  color: #ff284d;
+}
+.order-list .air-order-item .go-details .count li:nth-child(1) {
+  padding-left: 0;
+}
+.order-list .air-order-item .go-details .count .noboder {
+  border: none;
+}
+.order-list .air-order-item .order-buttom {
+  margin: 1.3rem;
+  overflow: hidden;
+}
+.order-list .air-order-item .order-buttom .user-img {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  overflow: hidden;
+  float: left;
+  margin-top: 0.2rem;
+}
+.order-list .air-order-item .order-buttom .user-img img {
+  width: 100%;
+  height: 100%;
+}
+.order-list .air-order-item .order-buttom .user-name {
+  width: 9.8rem;
+  height: 100%;
+  float: left;
+  margin-left: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: PingFangSC-Regular;
+  font-size: 1.2rem;
+  color: #181c28;
+  text-align: justify;
+  line-height: 2.4rem;
+  padding-top: 0.2rem;
+}
+.order-list .air-order-item .order-buttom .button {
+  display: flex;
+  overflow: hidden;
+  float: right;
+}
+.order-list .air-order-item .order-buttom .button li {
+  display: inline-block;
+  height: 2.8rem;
+  padding: 0 1.7rem;
+  line-height: 2.8rem;
+  text-align: center;
+  border: 0.1rem solid #e3e3e7;
+  margin-left: 0.8rem;
+  border-radius: 1.4rem;
+  font-family: PingFangSC-Regular;
+  font-size: 1.3rem;
+  color: #181c28;
+}
+.order-list .air-order-item .order-buttom .button .paid,
+.order-list .air-order-item .order-buttom .button .download,
+.order-list .air-order-item .order-buttom .button .refund.much {
+  background-image: linear-gradient(-90deg, #ff5b5e 0%, #ff284d 100%);
+  color: #fff;
+  border: none;
+}
+.order-list .car-order-item .go-details .order-id {
+  height: 5.65rem;
+}
+.order-list .car-order-item .go-details .order-id .number {
+  margin-bottom: 0.5rem;
+}
+.order-list .car-order-item .go-details .location {
+  font-size: 1.2rem;
+  color: #7f8593;
+  padding: 0 1.6rem;
+}
+.order-list .car-order-item .go-details .location h4 {
+  font-size: 1.3rem;
+  color: #ff284d;
+}
+.order-list .car-order-item .go-details .location .item {
+  display: flex;
+  line-height: 1.6rem;
+}
+.order-list .car-order-item .go-details .location .item span {
+  width: 28.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
