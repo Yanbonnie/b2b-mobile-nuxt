@@ -5,7 +5,6 @@ export const state = () => {
 export const mutations = {
     changeNav(state, index) {
         state.active = index;
-        console.log('state.active'+state.active)
     }
 }
 

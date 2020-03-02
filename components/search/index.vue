@@ -1,17 +1,19 @@
 <template>
   <div>
-    <van-search
-      v-model="value"
-      placeholder="请输入搜索关键词"
-      show-action
-      shape="round"
-      @search="onSearch"
-      @input="onInput"
-      class="van-search-box"
-      :class="className + ' ' + scollName"
-    >
-      <div slot="action" @click="onSearch">搜索</div>
-    </van-search>
+    <form action="/">
+      <van-search
+        v-model="value"
+        placeholder="请输入搜索关键词"
+        show-action
+        shape="round"
+        @search="onSearch"
+        @input="onInput"
+        class="van-search-box"
+        :class="className + ' ' + scollName"
+      >
+        <div slot="action" @click="onSearch">搜索</div>
+      </van-search>
+    </form>
   </div>
 </template>
 

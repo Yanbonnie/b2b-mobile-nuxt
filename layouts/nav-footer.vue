@@ -2,15 +2,15 @@
   <div>
     <!-- style="overflow-x:hidden;" -->
     <div>
-      <nuxt />
+      <nuxt keep-alive/>
     </div>
     <div class="footer-nav">
       <ul>
         <nuxt-link tag="li" to="/">
-          <van-icon name="wap-home-o" :color="navActive === 0 ? '#E3324C' : ''" />首页{{navActive}}
+          <van-icon name="wap-home-o" :color="navActive === 0 ? '#E3324C' : ''" />首页
         </nuxt-link>
         <nuxt-link tag="li" to="/find">
-          <van-icon name="hot-o" :color="navActive === 1 ? '#E3324C' : ''" />发现{{navActive}}
+          <van-icon name="hot-o" :color="navActive === 1 ? '#E3324C' : ''" />发现
         </nuxt-link>
 
         <nuxt-link tag="li" to="/login" v-if="!$store.getters.isAuth">
