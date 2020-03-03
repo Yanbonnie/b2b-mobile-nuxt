@@ -37,6 +37,7 @@ export default (ctx, inject) => {
               path: '/login'
             });
           } else {
+            console.log(data)
             resolve(data)
           }
           // if (data.resultCode === 'success') {
@@ -88,7 +89,11 @@ export default (ctx, inject) => {
     // 订单列表
     queryOrders(data) {
       return app.$api.request({method: 'get', url: 'myOrder/p/queryOrders.json', data, proxy: 'b2b'})
-    }
+    },
 
+    //用户中心
+    loadAccount(data) {
+      return app.$api.request({method: 'get', url: 'memberCenter/p/loadAccount.json', data, proxy: 'b2b'})
+    }
   })
 }

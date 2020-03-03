@@ -2,7 +2,7 @@
   <div>
     <div class="info"></div>
     <van-cell icon="like-o" title="我的收藏" is-link value=""/>
-    <van-cell icon="notes-o" title="账号管理" is-link value=""/>
+    <van-cell icon="notes-o" to="/member/accountManage" title="账号管理" is-link value=""/>
     <van-cell icon="coupon-o" title="优惠券" is-link value=""/>
     <p class="title">安全设置</p>
     <van-cell title="登录密码" is-link value="">

@@ -1,15 +1,17 @@
 <template>
   <div class="list-wrap">
-    <van-search
-      v-model="keywords"
-      placeholder="请输入搜索关键词"
-      show-action
-      shape="round"
-      @search="onSearch"
-      class="list-search"
-    >
-      <div slot="action" @click="onSearch">搜索</div>
-    </van-search>
+    <form action="/">
+      <van-search
+        v-model="keywords"
+        placeholder="请输入搜索关键词"
+        show-action
+        shape="round"
+        @search="onSearch"
+        class="list-search"
+      >
+        <div slot="action" @click="onSearch">搜索</div>
+      </van-search>
+    </form>
     <van-tabs v-model="active" @change="tabChange" class="nav-box">
       <van-tab title="跟团"></van-tab>
       <van-tab title="票券"></van-tab>
@@ -41,7 +43,7 @@
               <div class="supplier-price-wrp">
                 <!--  供应商-->
                 <div class="supplier-wrp">
-                  <img :src="item.supplierLogoUrl" />
+                  <img :src="item.supplierLogoUrl"/>
                   <span class="provider-name">{{item.supplierName}}</span>
                 </div>
                 <!--  价格-->
@@ -89,7 +91,7 @@
             <p>景点地址：{{item.address}}</p>
             <div class="list-info-bar">
               <div class="info-left">
-                <img src="http://file.gzl.cn/group1/M00/13/E6/wKkBHlpUm3WAcu-ZAABOefXavZs111.png" />
+                <img src="http://file.gzl.cn/group1/M00/13/E6/wKkBHlpUm3WAcu-ZAABOefXavZs111.png"/>
                 <span>{{item.supplierName}}</span>
               </div>
               <div class="info-right">
@@ -117,7 +119,7 @@
             </ul>
             <div class="list-info-bar">
               <div class="info-left">
-                <img :src="item.supplierLogoUrl" />
+                <img :src="item.supplierLogoUrl"/>
                 <span>{{item.supplierName}}</span>
               </div>
               <div class="info-right">
@@ -144,7 +146,7 @@
           <p>酒店地址：{{item.address}}</p>
           <div class="list-info-bar">
             <div class="info-left">
-              <img src="http://file.gzl.cn/group1/M00/13/E6/wKkBHlpUm3WAcu-ZAABOefXavZs111.png" />
+              <img src="http://file.gzl.cn/group1/M00/13/E6/wKkBHlpUm3WAcu-ZAABOefXavZs111.png"/>
 
               <span>{{item.supplierName}}</span>
             </div>
@@ -177,7 +179,7 @@
               <div class="supplier-price-wrp">
                 <!--  供应商-->
                 <div class="supplier-wrp">
-                  <img :src="item.supplierLogoUrl" />
+                  <img :src="item.supplierLogoUrl"/>
                   <span class="provider-name">{{item.supplierName}}</span>
                 </div>
                 <!--  价格-->
@@ -203,122 +205,122 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      list: [
-        {
-          title: "跟团",
-          loading: false,
-          finished: false,
-          pageStr: 0,
-          data: []
-        },
-        {
-          title: "票券",
-          loading: false,
-          finished: false,
-          pageStr: 0,
-          data: []
-        },
-        {
-          title: "邮轮",
-          loading: false,
-          finished: false,
-          pageStr: 0,
-          data: []
-        },
-        {
-          title: "酒店",
-          loading: false,
-          finished: false,
-          pageStr: 0,
-          data: []
-        },
-        {
-          title: "自由行",
-          loading: false,
-          finished: false,
-          pageStr: 0,
-          data: []
-        }
-      ],
-      apiArr: [
-        "groupTourProduct",
-        "getTicketList",
-        "getMcruisesSearchPage",
-        "getHotelList",
-        "loadFreeTravelProduct"
-      ],
-      pageSize: 5,
-      //   pageStr: 1,
-      //   loading: false,
-      //   finished: false,
-      active: 0,
-      keywords: ""
-    };
-  },
-
-  methods: {
-    tabChange() {
-      let { active } = this;
-      this.list[active].finished = false;
-      this.list[active].loading = true;
-      this.list[active].pageStr = 0;
-      this.list[active].data = [];
-      if (this.list[active].loading) {
-        this.onLoad();
-      }
-    },
-    onSearch() {
-      let { active } = this;
-      this.list[active].finished = false;
-      this.list[active].loading = true;
-      this.list[active].pageStr = 0;
-      this.list[active].data = [];
-      if (this.list[active].loading) {
-        // this.onLoad();
-      }
-    },
-    onLoad() {
-      let { pageSize, apiArr, active, list, keywords } = this;
-      this.$api[apiArr[active]]({
-        pageSize,
-        pageStr: list[active].pageStr,
-        keywords: keywords
-      })
-        .then(res => {
-          //票券
-          this.list[active].data = [...list[active].data, ...res.data.content];
-          if (res.data.lastPage) {
-            this.list[active].finished = true;
+  export default {
+    data() {
+      return {
+        list: [
+          {
+            title: "跟团",
+            loading: false,
+            finished: false,
+            pageStr: 0,
+            data: []
+          },
+          {
+            title: "票券",
+            loading: false,
+            finished: false,
+            pageStr: 0,
+            data: []
+          },
+          {
+            title: "邮轮",
+            loading: false,
+            finished: false,
+            pageStr: 0,
+            data: []
+          },
+          {
+            title: "酒店",
+            loading: false,
+            finished: false,
+            pageStr: 0,
+            data: []
+          },
+          {
+            title: "自由行",
+            loading: false,
+            finished: false,
+            pageStr: 0,
+            data: []
           }
-          this.list[active].pageStr = this.list[active].pageStr + 1;
-          // 加载状态结束
-          this.list[active].loading = false;
-        })
-        .catch(() => {
-          this.$toast("服务器出错了");
-        });
-      // 异步更新数据
-      //   setTimeout(() => {
-      //     for (let i = 0; i < 10; i++) {
-      //       this.list.push(this.list.length + 1);
-      //     }
-      //     // 加载状态结束
-      //     this.loading = false;
+        ],
+        apiArr: [
+          "groupTourProduct",
+          "getTicketList",
+          "getMcruisesSearchPage",
+          "getHotelList",
+          "loadFreeTravelProduct"
+        ],
+        pageSize: 5,
+        //   pageStr: 1,
+        //   loading: false,
+        //   finished: false,
+        active: 0,
+        keywords: ""
+      };
+    },
 
-      //     // 数据全部加载完成
-      //     if (this.list.length >= 40) {
-      //       this.finished = true;
-      //     }
-      //   }, 500);
+    methods: {
+      tabChange() {
+        let {active} = this;
+        this.list[active].finished = false;
+        this.list[active].loading = true;
+        this.list[active].pageStr = 0;
+        this.list[active].data = [];
+        if (this.list[active].loading) {
+          this.onLoad();
+        }
+      },
+      onSearch() {
+        let {active} = this;
+        this.list[active].finished = false;
+        this.list[active].loading = true;
+        this.list[active].pageStr = 0;
+        this.list[active].data = [];
+        if (this.list[active].loading) {
+          this.onLoad();
+        }
+      },
+      onLoad() {
+        let {pageSize, apiArr, active, list, keywords} = this;
+        this.$api[apiArr[active]]({
+          pageSize,
+          pageStr: list[active].pageStr,
+          keywords: keywords
+        })
+          .then(res => {
+            //票券
+            this.list[active].data = [...list[active].data, ...res.data.content];
+            if (res.data.lastPage) {
+              this.list[active].finished = true;
+            }
+            this.list[active].pageStr = this.list[active].pageStr + 1;
+            // 加载状态结束
+            this.list[active].loading = false;
+          })
+          .catch(() => {
+            this.$toast("服务器出错了");
+          });
+        // 异步更新数据
+        //   setTimeout(() => {
+        //     for (let i = 0; i < 10; i++) {
+        //       this.list.push(this.list.length + 1);
+        //     }
+        //     // 加载状态结束
+        //     this.loading = false;
+
+        //     // 数据全部加载完成
+        //     if (this.list.length >= 40) {
+        //       this.finished = true;
+        //     }
+        //   }, 500);
+      }
+    },
+    mounted() {
+      this.keywords = this.$route.query.keywords;
     }
-  },
-  mounted() {
-    this.keywords = this.$route.query.keywords;
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>
