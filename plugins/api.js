@@ -28,7 +28,7 @@ export default (ctx, inject) => {
           url: proxyObj[baseUrl][params.proxy] + params.url,
           [params.method === 'post' ? 'data' : 'params']: params.method === 'post' ? qs.stringify(params.data) : params.data
         }).then(res => {
-          console.log(res)
+          // console.log(res)
           let data = res.data
           if ((typeof data === 'string') && data.indexOf('!DOCTYPE') > -1) {
             app.$cookiz.remove('SESSION');
@@ -37,7 +37,7 @@ export default (ctx, inject) => {
               path: '/login'
             });
           } else {
-            console.log(data)
+            // console.log(data)
             resolve(data)
           }
           // if (data.resultCode === 'success') {

@@ -2,7 +2,7 @@
   <div>
     <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
       <!-- <van-cell v-for="item in list" :key="item.orderCode" :title="item.title" /> -->
-      <van-cell :value="item.isValid === 'Y' ? '已启用' : '已停用'" is-link :label="item.operatingName + '  /  ' + item.mobile" v-for="item in list">
+      <van-cell :value-class="item.isValid === 'Y'? 'blue': ''" :value="item.isValid === 'Y' ? '已启用' : '已停用'" is-link :label="item.operatingName + '  /  ' + item.mobile" v-for="item in list">
         <!-- 使用 title 插槽来自定义标题 -->
         <template slot="title">
           <span class="custom-title">{{item.accountName}}</span>
@@ -65,5 +65,8 @@
   .logout {
     width: 90%;
     margin: 5rem auto 0;
+  }
+  .blue{
+    color: red;
   }
 </style>

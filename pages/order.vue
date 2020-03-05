@@ -55,6 +55,7 @@
 export default {
   layout: "nav-footer",
   middleware: 'auth',
+  transition: 'moveL',
   data() {
     return {
       list: [],

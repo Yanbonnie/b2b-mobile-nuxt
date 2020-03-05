@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Search url="/list" :scrollNum="srollTopNum" />
+    <Search url="/list_pro/travel" :scrollNum="srollTopNum" />
     <Banner :list="bannerList" @bannerHeight="getBannerHeight" />
     <ProductList :list="list" />
   </div>
@@ -9,6 +9,7 @@
 <script>
 export default {
   layout: "nav-footer",
+  transition: 'moveL',
   name: "home",
   async asyncData({ app, $axios, error }) {
     const res = await app.$api.groupTourProduct({

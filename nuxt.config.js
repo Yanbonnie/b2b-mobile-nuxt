@@ -1,6 +1,5 @@
-
 //生产环境提取css
-let cssRule = process.env.NODE_ENV == 'production' ? {extractCSS: { allChunks: true } } : {}
+let cssRule = process.env.NODE_ENV == 'production' ? {extractCSS: {allChunks: true}} : {}
 
 module.exports = {
   mode: 'universal',
@@ -10,19 +9,19 @@ module.exports = {
   head: {
     title: '行走网',//process.env.npm_package_name || '行走网',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'},
+      {hid: 'description', name: 'description', content: process.env.npm_package_description || ''}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet',type: 'text/css',href:'//at.alicdn.com/t/font_1667324_cfgxgp55sqp.css'}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_1667324_cfgxgp55sqp.css'}
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {color: '#fff'},
   /*
   ** Global CSS
   */
@@ -38,21 +37,20 @@ module.exports = {
   */
   plugins: [
     "~/plugins/vant.js",
-    { src: '~/plugins/axios.js', ssr: true },
-    { src: '~/plugins/api.js', ssr: true },
-    { src: '~/plugins/filter.js' }
+    {src: '~/plugins/axios.js', ssr: true},
+    {src: '~/plugins/api.js', ssr: true},
+    {src: '~/plugins/filter.js'}
   ],
   /*
   ** Nuxt.js dev-modules
   */
-  buildModules: [
-  ],
+  buildModules: [],
   /*
   ** Nuxt.js modules
   */
   modules: [
     '@nuxtjs/axios',
-    ['cookie-universal-nuxt', { alias: 'cookiz' }],
+    ['cookie-universal-nuxt', {alias: 'cookiz'}],
   ],
 
   axios: {
@@ -62,7 +60,7 @@ module.exports = {
     '/b2b': {
       target: 'https://m.testb2b.17ecgo.com',
 
-      pathRewrite: { '^/b2b/': '' }
+      pathRewrite: {'^/b2b/': ''}
     }
   },
   /*
@@ -84,7 +82,7 @@ module.exports = {
     color: '#ff503f',
     height: '2px'
   },
-  transition: 'moveL',
+  // transition: 'moveL',
   server: {
     port: 3000, // default: 3000
     host: '0.0.0.0' // default: localhost

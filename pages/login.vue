@@ -37,6 +37,7 @@ import md5 from "md5";
 //
 // Vue.use(Form);
 export default {
+  transition: 'moveL',
   data() {
     return {
       username: "ybn",

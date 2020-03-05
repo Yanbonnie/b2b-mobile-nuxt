@@ -16,6 +16,7 @@
 <script>
 export default {
   layout: "nav-footer",
+  transition: 'moveL',
   async asyncData({ app, $axios, error }) {
     const res = await app.$api.getTicketList({
       pageSize: 5,

@@ -24,6 +24,7 @@
 <script>
   export default {
     layout: "nav-footer",
+    transition: 'moveL',
     middleware: ['auth'],
     methods: {
       loginOut() {
