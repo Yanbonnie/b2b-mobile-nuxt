@@ -19,11 +19,19 @@
       <van-tab title="酒店"></van-tab>
       <van-tab title="自由行"></van-tab>
     </van-tabs>
-    <nuxt-child keep-alive :keywords="keywords" ref="childs" @go-detail="goDetail"></nuxt-child>
+    <!--:keep-alive-props="{ exclude: ['travel.vue','ticket.vue'] }"-->
+    <nuxt-child keep-alive :keywords="keywords" :key="$route.fullPath" ref="childs" @go-detail="goDetail"></nuxt-child>
   </div>
 </template>
 
 <script>
+  /*
+  * 1. prop  ：keywords  目的 ：传给子页面请求的时候的keywords
+  * 2. query ：keywords  目的 ：处理参数变化重新加载数据
+  * 3. nuxt-child 子组件需要配置 keep-alive 和 :key="$route.fullPath"
+  * 3. 特殊处理： keywords发生了变化，点击搜索，启动重定向（replace）到当前页面，并改变参数。
+  * 4. 特殊处理： 切换tab的时候，请带上keywords参数跳转
+  * */
   export default {
     name: "index.vue",
     data() {
@@ -50,32 +58,29 @@
         },
         //第一次进入也执行监听
         immediate: true
-      },
-      keywords(){
-        this.onSearch();
       }
     },
     methods: {
       tabChange(name, title) {
         if (name == 0) {
           this.$router.push({
-            path: '/list_pro/travel'
+            path: `/list_pro/travel?keywords=${this.keywords}`
           })
         } else if (name == 1) {
           this.$router.push({
-            path: '/list_pro/ticket'
+            path: `/list_pro/ticket?keywords=${this.keywords}`
           })
         } else if (name == 2) {
           this.$router.push({
-            path: '/list_pro/cruise'
+            path: `/list_pro/cruise?keywords=${this.keywords}`
           })
         } else if (name == 3) {
           this.$router.push({
-            path: '/list_pro/hotel'
+            path: `/list_pro/hotel?keywords=${this.keywords}`
           })
         } else {
           this.$router.push({
-            path: '/list_pro/freetravel'
+            path: `/list_pro/freetravel?keywords=${this.keywords}`
           })
         }
       },

@@ -62,10 +62,7 @@
   export default {
     name: "travel.vue",
     props: ['keywords'],
-    key(route){
-      console.log(111)
-      return new Date().getTime();
-    },
+    // watchQuery: ['keywords'],
     data() {
       return {
         pageSize: 5,
@@ -77,13 +74,25 @@
     },
     methods: {
       onSearch() {
-        this.finished = false;
-        this.loading = true;
-        this.pageStr = 0;
-        this.list = [];
-        if (this.loading) {
-          this.onLoad();
+        let path = this.$route.path;
+        let keywords = this.keywords;
+        if (this.$route.query.keywords === this.keywords) {
+          return
         }
+        this.$router.replace({
+          path,
+          query: {
+            keywords
+          }
+        })
+
+        // this.finished = false;
+        // this.loading = true;
+        // this.pageStr = 0;
+        // this.list = [];
+        // if (this.loading) {
+        //   this.onLoad();
+        // }
       },
       onLoad() {
         let {pageSize, list, pageStr, keywords} = this;
@@ -106,14 +115,11 @@
             this.$toast("服务器出错了");
           });
       },
-      goDetail(id){
+      goDetail(id) {
         this.$router.push({
-          path:`/detail/travel/${id}`
+          path: `/detail/travel/${id}`
         })
       }
-    },
-    mounted() {
-      console.log("进来跟团咯")
     }
   }
 </script>

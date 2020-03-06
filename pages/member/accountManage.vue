@@ -45,6 +45,7 @@
       }
     },
     mounted() {
+      　console.log("进入了")
     }
   };
 </script>

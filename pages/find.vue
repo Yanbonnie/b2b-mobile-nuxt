@@ -1,7 +1,7 @@
 
 <template>
   <div class="find">
-    <Search url="/list" />
+    <Search url="/list_pro/travel" />
     <Banner :list="bannerList" />
     <ProductList :list="list" />
     <!-- <form>

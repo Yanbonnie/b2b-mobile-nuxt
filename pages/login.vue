@@ -22,59 +22,60 @@
         </van-button>
       </div>
     </van-form>
-<!--    <form>-->
-<!--      <input type="text" v-model="username" />-->
-<!--      <input type="password" v-model="psw" />-->
-<!--      <a href="javascript:;" @click="loginHandle">登录</a>-->
-<!--    </form>-->
   </div>
 </template>
 
 <script>
-import md5 from "md5";
-// import Vue from 'vue';
-// import { Form } from 'vant';
-//
-// Vue.use(Form);
-export default {
-  transition: 'moveL',
-  data() {
-    return {
-      username: "ybn",
-      psw: "China888"
-    };
-  },
-  methods: {
-    loginHandle() {
-      let { username, psw } = this;
-      this.$api
-        .mobileWebLogin({
-          username: username,
-          password: md5(psw),
-          isPC: "1",
-          pcCheckLogin: "1"
-        })
-        .then(res => {
-          // console.log(res);
-          if (res.resultCode) {
-            this.$store.commit("setToken", 'isLogin');
-
-            let _to = this.$route.query.to || null;
-            if (_to) {
-              this.$router.replace({
-                path: this.$route.query.to || "/"
-              });
-            } else {
-              this.$router.back();
+  import md5 from "md5";
+  export default {
+    transition: 'moveL',
+    layout: "login",
+    data() {
+      return {
+        username: "ybn",
+        psw: "China888",
+        backUrl: ''
+      };
+    },
+    // beforeRouteEnter(to, from, next) {
+    //   next(vm => {
+    //     vm.backUrl = from.fullPath;
+    //   })
+    // },
+    methods: {
+      loginHandle() {
+        let {username, psw} = this;
+        this.$api
+          .mobileWebLogin({
+            username: username,
+            password: md5(psw),
+            isPC: "1",
+            pcCheckLogin: "1"
+          })
+          .then(res => {
+            // console.log(res);
+            if (res.resultCode) {
+              this.$store.commit("setToken", 'isLogin');
+              console.log(this.$router)
+              let _to = this.$route.query.to || null;
+              if (_to) {
+                this.$router.replace({
+                  path: this.$route.query.to || "/"
+                });
+              } else {
+                this.$router.back();
+                // this.$router.replace({
+                //   path:this.backUrl+'?t='+new Date().getTime()
+                // })
+              }
             }
-          }
-        });
-    }
-  },
-  mounted() {
+          });
+      }
+    },
+    mounted() {
 
-  }
-};
+    }
+  };
 </script>
 
 <style>
