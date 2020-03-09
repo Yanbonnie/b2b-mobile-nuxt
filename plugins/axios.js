@@ -1,5 +1,6 @@
 export default function ({$axios, app, redirect, route, store}) {
   $axios.defaults['timeout'] = 50000;
+
   $axios.defaults['withCredentials'] = true;
   /*
   $axios.onRequest(config => {
