@@ -3,6 +3,7 @@ let cssRule = process.env.NODE_ENV == 'production' ? {extractCSS: {allChunks: tr
 
 module.exports = {
   mode: 'universal',
+  // mode:'spa',
   /*
   ** Headers of the page
   */
@@ -59,7 +60,6 @@ module.exports = {
   proxy: {
     '/b2b': {
       target: 'https://m.testb2b.17ecgo.com',
-
       pathRewrite: {'^/b2b/': ''}
     }
   },
@@ -76,7 +76,7 @@ module.exports = {
     }
   },
   router: {
-    // middleware: 'auth'
+    // middleware: ['spa']
   },
   loading: {
     color: '#ff503f',

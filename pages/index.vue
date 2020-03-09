@@ -39,7 +39,6 @@ export default {
     }
   },
   async mounted() {
-    this.$store.commit("footer/changeNav", 0);
     // this.$api.getActivity({ code: "20200108001" }).then(res => {
     //   console.log(res);
     // });

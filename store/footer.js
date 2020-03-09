@@ -1,6 +1,6 @@
-export const state = () => {
-    active: 0
-}
+export const state = () => ({
+  active: 0
+})
 
 export const mutations = {
     changeNav(state, index) {

@@ -56,7 +56,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.commit("footer/changeNav", 1);
+
   }
 };
 </script>

@@ -7,9 +7,15 @@ let proxyObj = {
     b2b: '/b2b/',
     ecwalk: '/ecwalk/'
   },
+  //服务端渲染
+  // pro: {
+  //   b2b: '/b2b/',
+  //   ecwalk: '/b2b/'
+  // }
+  //spa
   pro: {
-    b2b: '/b2b/',
-    ecwalk: '/b2b/'
+    b2b: 'https://m.testb2b.17ecgo.com/',
+    ecwalk: 'https://m.testb2b.17ecgo.com/'
   }
 }
 
@@ -31,8 +37,8 @@ export default (ctx, inject) => {
           // console.log(res)
           let data = res.data
           if ((typeof data === 'string') && data.indexOf('!DOCTYPE') > -1) {
-            app.$cookiz.remove('SESSION');
-            app.$cookiz.remove('rememberMe');
+            // app.$cookiz.remove('SESSION');
+            // app.$cookiz.remove('rememberMe');
             app.router.push({
               path: '/login'
             });

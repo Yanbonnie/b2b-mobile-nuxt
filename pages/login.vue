@@ -54,9 +54,12 @@
           })
           .then(res => {
             // console.log(res);
-            if (res.resultCode) {
-              this.$store.commit("setToken", 'isLogin');
-              console.log(this.$router)
+            if (res.resultCode === 'success') {
+              //ssr
+              this.$store.commit("setToken", res.data);
+              //spa
+              // this.$cookiz.set('rememberMe2',res.data)
+
               let _to = this.$route.query.to || null;
               if (_to) {
                 this.$router.replace({
@@ -64,9 +67,6 @@
                 });
               } else {
                 this.$router.back();
-                // this.$router.replace({
-                //   path:this.backUrl+'?t='+new Date().getTime()
-                // })
               }
             }
           });

@@ -29,15 +29,14 @@
     methods: {
       loginOut() {
         this.$store.commit('setToken', null)
-        // this.$cookiz.remove('SESSION')
-        // this.$cookiz.remove('rememberMe')
+        //spa
+        // this.$cookiz.remove('rememberMe2')
         this.$api.mobileLoginOut({isAnon: 1}).then(res => {
           console.log(res)
         })
       }
     },
     mounted() {
-      this.$store.commit('footer/changeNav', 3)
     }
   };
 </script>

@@ -40,7 +40,24 @@
         return this.$store.getters['footer/active'];
       }
     },
+    watch:{
+      $route:{
+        handler(to,from){
+          if(to.path === '/'){
+            this.$store.commit("footer/changeNav", 0);
+          }else if(to.path === '/find'){
+            this.$store.commit("footer/changeNav", 1);
+          }else if(to.path === '/order'){
+            this.$store.commit("footer/changeNav", 2);
+          }else if(to.path === '/member'){
+            this.$store.commit("footer/changeNav", 3);
+          }
+        },
+        immediate:true
+      }
+    },
     mounted() {
+
     }
   };
 </script>

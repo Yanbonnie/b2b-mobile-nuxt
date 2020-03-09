@@ -1,6 +1,7 @@
 export default function ({ store, redirect, route, app }) {
     // console.log(process.server)
-    // console.log(app.$cookiz.get('rememberMe'))
+
+    //ssr
     if (!store.state.userToken) {
         return redirect(`/login?to=${route.fullPath}`);
     }
