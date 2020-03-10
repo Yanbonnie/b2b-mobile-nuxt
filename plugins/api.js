@@ -59,7 +59,27 @@ export default (ctx, inject) => {
           //     reject(data)
           // }
         }).catch((error) => {
-          Toast('请求出错了')
+          if (!error.response) {  //后台没有响应，初次判断是重定向到登录页
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            // console.log(error.response.data);
+            // console.log(error.response.status);
+            // console.log(error.response.headers);
+            app.router.push({
+              path: '/login'
+            });
+          } else if (error.request) {
+            // The request was made but no response was received
+            // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+            // http.ClientRequest in node.js
+            // console.log(error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            // console.log('Error', error.message);
+          }
+          // console.log(error.config);
+          // console.log(error)
+          // Toast('请求出错了')
         })
       })
     },
@@ -100,6 +120,10 @@ export default (ctx, inject) => {
     //用户中心
     loadAccount(data) {
       return app.$api.request({method: 'get', url: 'memberCenter/p/loadAccount.json', data, proxy: 'b2b'})
+    },
+
+    loadConfig(data) {
+      return app.$api.request({method: 'get', url: 'common/whechat/loadConfig.json', data, proxy: 'b2b'})
     }
   })
 }

@@ -16,7 +16,12 @@ module.exports = {
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_1667324_cfgxgp55sqp.css'}
+      {rel: 'stylesheet', type: 'text/css', href: '//at.alicdn.com/t/font_1667324_cfgxgp55sqp.css'},
+      {type:'text/javascript',href:'/js/jweixin-1.4.0.js'}
+    ],
+    script: [
+      {src: '/js/jweixin-1.4.0.js'},
+      // {src: '/tcmember/js/vconsole.min.js'}
     ]
   },
   /*

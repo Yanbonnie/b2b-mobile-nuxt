@@ -6,6 +6,7 @@
         name="用户名"
         label="用户名"
         placeholder="用户名"
+        autocomplete="off"
         :rules="[{ required: true, message: '请填写用户名' }]"
       />
       <van-field
@@ -14,6 +15,7 @@
         name="密码"
         label="密码"
         placeholder="密码"
+        autocomplete="off"
         :rules="[{ required: true, message: '请填写密码' }]"
       />
       <div style="margin: 16px;">
@@ -73,7 +75,6 @@
       }
     },
     mounted() {
-
     }
   };
 </script>
